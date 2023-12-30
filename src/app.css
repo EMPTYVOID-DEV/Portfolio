@@ -10,6 +10,10 @@ a {
 	box-sizing: border-box;
 }
 
+html {
+	overflow-x: hidden;
+}
+
 :root {
 	/* default font sizes polled from https://websemantics.uk/tools/responsive-font-calculator/
 	 responsive font sizes for screens between 768px-1920px
@@ -29,14 +33,49 @@ a {
 	--lh4: 1.5;
 	--lhbody: 1.6;
 
+	--font: 'Spline Sans Mono', monospace;
+	--defaultFont: Arial, Helvetica, sans-serif;
+
 	/* default colors polled from https://clrs.cc/ */
-	--blue: #0074d9;
-	--red: #ff4136;
-	--orange: #ff851b;
-	--yellow: #ffdc00;
-	--green: #2ecc40;
+	--red: #d4150b;
+	--orange: #cc3300;
 	--black: #111111;
-	--gray: #aaaaaa;
-	--silver: #dddddd;
 	--white: #ffffff;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	font-family: var(--font);
+	font-weight: bold;
+}
+
+h1 {
+	font-size: var(--h1);
+	line-height: var(--lh1);
+}
+h2 {
+	font-size: var(--h2);
+	line-height: var(--lh2);
+}
+h3 {
+	font-size: var(--h3);
+	line-height: var(--lh3);
+}
+h4 {
+	font-size: var(--h4);
+	line-height: var(--lh4);
+}
+
+p,
+span,
+a,
+li {
+	font-family: var(--font);
+	font-size: var(--body);
+	line-height: var(--lhbody);
+	font-weight: 400;
+	word-break: break-word;
+	white-space: pre-wrap;
 }

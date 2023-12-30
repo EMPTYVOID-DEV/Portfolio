@@ -1,0 +1,52 @@
+<script lang="ts">
+	import Description from '$lib/components/core/description.svelte';
+	import Units from '$lib/components/core/units.svelte';
+	import type { units } from '$lib/utils/types';
+	let description = `My name is aymen keskas also known as "empty void" a 21 year old independent web creator with a focus on building robust infrastructures using Node.js, particularly passionate about SvelteKit. Proficient in both frontend and backend development, utilizing Svelte and React for visually appealing user interfaces.`;
+	let awards: units = [
+		{
+			date: { day: 5, month: 'Jun', year: 2023 },
+			title: "Bachelor's degree , Computer science",
+			description:
+				'I got Bachelors degreen in computer science at ferhat abbas university with score equal to 16.18.',
+			href: 'https://fsciences.univ-setif.dz/'
+		}
+	];
+</script>
+
+<div class="about">
+	<Description header="About" {description} />
+	<div class="awards">
+		<h3>Awards</h3>
+		<Units units={awards} />
+	</div>
+</div>
+
+<style>
+	.about {
+		width: 80%;
+		display: flex;
+		flex-direction: column;
+		padding-left: 5%;
+		gap: 40px;
+	}
+	.awards {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+	}
+
+	.awards h3 {
+		color: var(--orange);
+		align-self: center;
+		padding-bottom: 5px;
+		border-bottom: 3px solid var(--orange);
+	}
+
+	@media screen and (width < 768px) {
+		.about {
+			width: 95%;
+		}
+	}
+</style>
