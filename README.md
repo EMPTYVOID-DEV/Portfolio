@@ -36,7 +36,7 @@ I am dedicated to delivering unique and personalized web applications. Embracing
 
 Feel free to reach out for collaboration, questions, or just to say hello!
 
-- **Email:** [YourEmailAddress@example.com](mailto:keskasaymen8@gmail.com)
+- **Email:** [keskasaymen8@gmail.com](mailto:keskasaymen8@gmail.com)
 - **LinkedIn:** [Aymen Keskas](https://www.linkedin.com/in/aymenkeskas/)
 - **GitHub:** [empty-void](https://github.com/empty-void)
 
