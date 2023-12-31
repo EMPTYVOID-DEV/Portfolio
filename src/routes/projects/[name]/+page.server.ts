@@ -2,7 +2,7 @@ import type { Load } from '@sveltejs/kit';
 import fs from 'fs';
 import path from 'path';
 
-export const ssr = false;
+export const prerender = true;
 
 export const load: Load = async ({ params }) => {
 	const name = decodeURIComponent(params.name);
