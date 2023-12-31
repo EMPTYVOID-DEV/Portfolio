@@ -1,38 +1,43 @@
-# create-svelte
+# Aymen Keskas Portfolio
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+## Introduction
 
-## Creating a project
+Hello! I'm Aymen Keskas, also known as "empty void," a 21-year-old independent web creator. I specialize in building robust infrastructures using Node.js, with a particular passion for SvelteKit. My expertise spans both frontend and backend development, where I leverage Svelte and React to craft visually appealing user interfaces.
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Technical Proficiency
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+- **Frontend Development:**
+  - Svelte
+  - React
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+- **Backend Development:**
+  - Node.js
+  - Express.js
+  - PostgreSQL (Preference)
+  - MongoDB (NoSQL)
 
-## Developing
+## Design Philosophy
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+I am deeply committed to user-centric design principles. Every project I undertake is approached with a focus on creating an engaging and intuitive user experience. I believe in the power of design to elevate the functionality and appeal of web applications.
 
-```bash
-npm run dev
+## Specialized Skills
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+- **Web Scraping:**
+  - Proficient in using Puppeteer for effective web scraping.
 
-## Building
+- **Machine Learning:**
+  - Possesses knowledge of machine learning with Python.
 
-To create a production version of your app:
+## Project Approach
 
-```bash
-npm run build
-```
+I am dedicated to delivering unique and personalized web applications. Embracing the indie spirit, I bring a distinctive touch to every project, ensuring that each creation stands out with its own identity and purpose.
 
-You can preview the production build with `npm run preview`.
+## Contact Information
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+Feel free to reach out for collaboration, questions, or just to say hello!
+
+- **Email:** [keskasaymen8@gmail.com](mailto:keskasaymen8@gmail.com)
+- **LinkedIn:** [Aymen Keskas](https://www.linkedin.com/in/aymenkeskas/)
+- **GitHub:** [empty-void](https://github.com/empty-void)
+
+Thank you for visiting my portfolio! I look forward to the opportunity to work on exciting projects and bring innovative ideas to life.
