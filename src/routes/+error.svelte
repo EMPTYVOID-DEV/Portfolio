@@ -62,14 +62,11 @@
 		overflow: hidden;
 	}
 	.error h1 {
-		font-weight: bolder;
-		font-size: var(--h1);
 		color: transparent;
 		background-color: var(--red);
 		background-clip: text;
 		-moz-background-clip: text;
 		-webkit-background-clip: text;
-		line-height: var(--lh1);
 	}
 	.error div {
 		display: flex;
@@ -80,14 +77,9 @@
 		align-items: center;
 	}
 	.error div h3 {
-		font-size: var(--h3);
-		font-weight: bold;
-		line-height: var(--lh3);
 		color: var(--black);
 	}
 	.error div p {
-		font-size: var(--body);
-		line-height: var(--lht);
 		text-align: center;
 		color: var(--black);
 		font-weight: 600;

@@ -23,14 +23,14 @@
 		align-items: center;
 	}
 	.header h1 {
-		font-size: var(--huge);
-		color: var(--orange);
+		font-size: var(--h1);
+		color: var(--primary);
 	}
 	.header span {
 		width: 20px;
 		aspect-ratio: 1/1;
 		border-radius: 100%;
-		background-color: var(--orange);
+		background-color: var(--primary);
 	}
 	.description p {
 		color: var(--black);

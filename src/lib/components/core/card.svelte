@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { fade } from 'svelte/transition';
-
 	export let name: string;
 	export let src: string;
 	export let contrast: number = 1;
@@ -26,8 +24,8 @@
 		cursor: pointer;
 	}
 	.card:hover {
-		border: 2px solid var(--orange);
-		box-shadow: 4px 4px 10px var(--orange);
+		border: 2px solid var(--primary);
+		box-shadow: 4px 4px 10px var(--primary);
 	}
 	.card img {
 		width: 90%;

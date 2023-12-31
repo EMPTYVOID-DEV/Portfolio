@@ -1,7 +1,8 @@
 <script lang="ts">
 	import Description from '$lib/components/core/description.svelte';
 	import Units from '$lib/components/core/units.svelte';
-	import type { units } from '$lib/utils/types';
+	import { colorsMap, type units } from '$lib/utils/consts';
+	import { onMount } from 'svelte';
 	let description = `My name is aymen keskas also known as "empty void" a 21 year old independent web creator with a focus on building robust infrastructures using Node.js, particularly passionate about SvelteKit. Proficient in both frontend and backend development, utilizing Svelte and React for visually appealing user interfaces.`;
 	let awards: units = [
 		{
@@ -12,6 +13,9 @@
 			href: 'https://fsciences.univ-setif.dz/'
 		}
 	];
+	onMount(() => {
+		document.documentElement.style.setProperty('--primary', colorsMap.get('about'));
+	});
 </script>
 
 <div class="about">
@@ -38,10 +42,10 @@
 	}
 
 	.awards h3 {
-		color: var(--orange);
+		color: var(--primary);
 		align-self: center;
 		padding-bottom: 5px;
-		border-bottom: 3px solid var(--orange);
+		border-bottom: 3px solid var(--primary);
 	}
 
 	@media screen and (width < 768px) {

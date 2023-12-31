@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { units } from '$lib/utils/types';
+	import type { units } from '$lib/utils/consts';
 	import { compareDates } from '$lib/utils/functions';
 	export let units: units = [];
 	units = units.sort((a, b) => compareDates(a.date, b.date));
@@ -7,10 +7,10 @@
 
 <div class="units">
 	{#each units as unit}
-		<a class="unit" href={unit.href} target="_blank">
+		<a class="unit" href={unit.href}>
 			<span class="date">{unit.date.month}-{unit.date.day}-{unit.date.year}</span>
 			<div class="des">
-				<h3>{unit.title}</h3>
+				<span class="title">{unit.title}</span>
 				<p>{unit.description}</p>
 			</div>
 		</a>
@@ -31,15 +31,12 @@
 		flex-direction: row;
 		align-items: center;
 		padding: 10px;
-		border-bottom: 2px solid var(--black);
 		gap: 20px;
-	}
-	.unit:hover {
-		border: 2px solid var(--black);
-		border-radius: 4px;
+		border-bottom: 2px solid var(--primary);
 	}
 	.date {
-		color: var(--orange);
+		color: var(--primary);
+		font-weight: 600;
 		min-width: 150px;
 	}
 	.des {
@@ -47,9 +44,29 @@
 		flex-direction: column;
 		gap: 10px;
 	}
-	.des h3 {
-		color: color-mix(in srgb, var(--orange) 80%, var(--black) 20%);
+	.title {
+		color: color-mix(in srgb, var(--primary) 80%, var(--black) 20%);
 		text-transform: capitalize;
+		font-size: var(--h3);
+		font-weight: bold;
+		transition: all 0.2s ease;
+		position: relative;
+		width: fit-content;
+	}
+
+	.title::after {
+		content: '';
+		display: inline-block;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 0;
+		height: 4px;
+		transition: all 0.3s ease-in-out;
+		background-color: var(--primary);
+	}
+	.unit:hover .title::after {
+		width: 100%;
 	}
 	.des p {
 		color: var(--black);

@@ -4,7 +4,7 @@
 	function write(node: HTMLSpanElement, { speed }: { speed: number }) {
 		const child = node.childNodes.item(0);
 		const text = child.textContent;
-		const duration = (text.length / speed) * 150;
+		const duration = (text.length / speed) * 120;
 		return {
 			duration,
 			easing: quadInOut,

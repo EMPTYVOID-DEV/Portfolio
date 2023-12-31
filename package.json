@@ -12,6 +12,8 @@
 		"format": "prettier --plugin-search-dir . --write ."
 	},
 	"dependencies": {
+		"@prisma/client": "5.7.1",
+		"@types/node": "^20.10.6",
 		"svelte-highlight": "^7.4.7",
 		"svelte-markdown": "^0.4.1"
 	},

@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Card from '$lib/components/core/card.svelte';
 	import TextWriting from '$lib/components/core/textWriting.svelte';
+	import { colorsMap } from '$lib/utils/consts';
 	import { onMount } from 'svelte';
 	let quote =
 		'A famous explorer once said that the extraordinary is in what we do, not who we are.';
@@ -31,6 +32,7 @@
 	let visible = false;
 	onMount(() => {
 		visible = true;
+		document.documentElement.style.setProperty('--primary', colorsMap.get('home'));
 	});
 </script>
 
@@ -68,7 +70,17 @@
 	}
 	.quote {
 		max-width: 600px;
-		color: var(--orange);
+		background: linear-gradient(
+			to left,
+			var(--about),
+			var(--skills),
+			var(--projects),
+			var(--writings),
+			var(--contact)
+		);
+		-webkit-background-clip: text;
+		letter-spacing: 2px;
+		color: transparent;
 		text-align: center;
 	}
 </style>

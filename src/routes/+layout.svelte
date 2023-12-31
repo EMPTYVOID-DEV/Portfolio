@@ -14,7 +14,7 @@
 		min-height: 100vh;
 		display: flex;
 		flex-direction: column;
-		gap: 20px;
+		gap: 30px;
 		background-color: var(--white);
 	}
 </style>

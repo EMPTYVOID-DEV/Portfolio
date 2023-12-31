@@ -1,18 +1,22 @@
 <script lang="ts">
 	import Description from '$lib/components/core/description.svelte';
 	import Units from '$lib/components/core/units.svelte';
-	import type { units } from '$lib/utils/types';
+	import { colorsMap, type units } from '$lib/utils/consts';
+	import { onMount } from 'svelte';
 	let description = `
 Embark on a journey through the dynamic landscape of web development, cyber security, and machine learning with a focus on React and Svelte. As an Indie creator, I share insights into crafting seamless user interfaces, securing digital landscapes, and applying machine learning in real-world scenarios`;
 	let writings: units = [
 		{
-			title: 'malware evasion and persistence techniques',
+			title: 'malware evasion and persistence',
 			date: { day: 21, month: 'Oct', year: 2023 },
 			description:
 				'In this writing we discuss how malware evade detection and persist in your system.',
-			href: '/writings/malware-persistant-evasion'
+			href: '/writings/malware persistant and evasion'
 		}
 	];
+	onMount(() => {
+		document.documentElement.style.setProperty('--primary', colorsMap.get('writings'));
+	});
 </script>
 
 <div class="writings">
@@ -27,5 +31,11 @@ Embark on a journey through the dynamic landscape of web development, cyber secu
 		flex-direction: column;
 		padding-left: 5%;
 		gap: 40px;
+	}
+
+	@media screen and (width < 768px) {
+		.writings {
+			width: 95%;
+		}
 	}
 </style>

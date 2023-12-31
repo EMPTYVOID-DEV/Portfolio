@@ -1,4 +1,5 @@
 <script>
+	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
 	import BackArrow from '$lib/components/icons/backArrow.svelte';
 </script>
@@ -14,7 +15,10 @@
 		<span
 			class="back"
 			on:click={() => {
-				window.history.back();
+				let paths = $page.url.pathname.split('/');
+				paths = paths.filter((el) => el != '');
+				paths.pop();
+				goto('/' + paths.join('/'));
 			}}
 		>
 			<BackArrow />
@@ -41,18 +45,14 @@
 		cursor: pointer;
 	}
 	.back:hover {
-		background-color: var(--orange);
+		background-color: color-mix(in srgb, var(--primary) 50%, white 0%);
 	}
 	.logo {
 		display: flex;
 		flex-direction: column;
 		font-family: var(--defaultFont);
 		letter-spacing: 2px;
-		color: var(--orange);
+		color: var(--primary);
 		cursor: pointer;
-	}
-	.logo:hover {
-		color: transparent;
-		-webkit-text-stroke: 2px var(--orange);
 	}
 </style>

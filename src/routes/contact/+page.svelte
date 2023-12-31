@@ -1,9 +1,16 @@
 <script lang="ts">
 	import Description from '$lib/components/core/description.svelte';
+	import { colorsMap } from '$lib/utils/consts';
+	import { onMount } from 'svelte';
+	let description =
+		"Thank you for exploring my portfolio! I'm excited to connect with you. Whether you have questions about my work, want to discuss potential collaborations, or simply want to say hello, I'd love to hear from you. Feel free to reach out using email or connect with me through the social media links provided.";
+	onMount(() => {
+		document.documentElement.style.setProperty('--primary', colorsMap.get('contact'));
+	});
 </script>
 
 <div class="contact">
-	<Description header="Get in touch" />
+	<Description header="Get in touch" {description} />
 	<div class="sections">
 		<div class="section">
 			<h4>Email</h4>
@@ -49,7 +56,7 @@
 		gap: 5px;
 	}
 	.section h4 {
-		color: var(--orange);
+		color: var(--primary);
 	}
 	.section span {
 		color: var(--black);
