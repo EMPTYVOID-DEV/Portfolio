@@ -1,3 +1,4 @@
+import { writings } from '$lib/utils/consts';
 import type { Load } from '@sveltejs/kit';
 import fs from 'fs';
 import path from 'path';
@@ -6,5 +7,6 @@ export const prerender = true;
 export const load: Load = async ({ params }) => {
 	const name = decodeURIComponent(params.name);
 	const md = fs.readFileSync(path.join('static', 'writings', name + '.md')).toString();
-	return { md };
+	const info = writings.find(({ title }) => title == name);
+	return { md, info };
 };

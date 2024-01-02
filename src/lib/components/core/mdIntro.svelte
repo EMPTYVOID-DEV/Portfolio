@@ -1,0 +1,74 @@
+<script lang="ts">
+	import type { months } from '$lib/utils/consts';
+
+	export let title: string;
+	export let date: { day: number; month: months; year: number };
+	export let readingTime: number;
+</script>
+
+<div class="intro">
+	<h1>{title}</h1>
+	<div class="timing">
+		<span>Created at {date.day}-{date.month}-{date.year}</span>
+		<span>Reading time is about {readingTime} min</span>
+	</div>
+</div>
+
+<style>
+	.intro {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		gap: 10px;
+		rotate: 1deg;
+		transform: skew(6deg);
+	}
+	h1 {
+		color: var(--black);
+		position: relative;
+		text-transform: capitalize;
+		padding: 5px;
+		text-shadow: 0;
+		transition: all 400ms ease;
+	}
+	h1:after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0%;
+		height: 100%;
+		background: linear-gradient(
+			to right,
+			var(--contact) 0%,
+			var(--contact) 30%,
+			var(--about) 30%,
+			var(--about) 60%,
+			var(--writings) 60%,
+			var(--writings) 100%
+		);
+		border-radius: 4px;
+		z-index: -1;
+		width: 10%;
+		transition: all 400ms ease;
+	}
+	h1:hover {
+		color: var(--white);
+		text-shadow:
+			2px 2px var(--black),
+			4px 4px var(--black),
+			6px 6px var(--black);
+	}
+	h1:hover::after {
+		width: 100%;
+	}
+	.timing {
+		display: flex;
+		flex-direction: column;
+		align-self: flex-end;
+		gap: 5px;
+	}
+	.timing span {
+		color: var(--writings);
+		font-weight: bold;
+	}
+</style>

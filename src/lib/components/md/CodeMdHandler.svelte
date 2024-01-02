@@ -47,6 +47,10 @@
 		display: block;
 	}
 
+	#codeMdBlock :global(:is(td, th)) {
+		white-space: unset;
+	}
+
 	#codeMdBlock #lang {
 		width: 100%;
 		border-top-left-radius: 5px;
@@ -56,7 +60,7 @@
 		justify-content: space-between;
 		align-items: center;
 		padding-inline: 10px;
-		padding-block: 5px;
+		padding-block: 5lpx;
 	}
 
 	#codeMdBlock #lang span {

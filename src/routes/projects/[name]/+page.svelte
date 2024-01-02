@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { page } from '$app/stores';
 	import CoreMd from '$lib/components/md/coreMd.svelte';
 	import { colorsMap } from '$lib/utils/consts.js';
 	import { getColorLevels } from '$lib/utils/functions.js';

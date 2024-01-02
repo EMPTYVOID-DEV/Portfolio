@@ -1,19 +1,11 @@
 <script lang="ts">
 	import Description from '$lib/components/core/description.svelte';
 	import Units from '$lib/components/core/units.svelte';
-	import { colorsMap, type units } from '$lib/utils/consts';
+	import { colorsMap, writings, type units } from '$lib/utils/consts';
 	import { onMount } from 'svelte';
 	let description = `
 Embark on a journey through the dynamic landscape of web development, cyber security, and machine learning with a focus on React and Svelte. As an Indie creator, I share insights into crafting seamless user interfaces, securing digital landscapes, and applying machine learning in real-world scenarios`;
-	let writings: units = [
-		{
-			title: 'malware evasion and persistence',
-			date: { day: 21, month: 'Oct', year: 2023 },
-			description:
-				'In this writing we discuss how malware evade detection and persist in your system.',
-			href: '/writings/malware persistant and evasion'
-		}
-	];
+
 	onMount(() => {
 		document.documentElement.style.setProperty('--primary', colorsMap.get('writings'));
 	});

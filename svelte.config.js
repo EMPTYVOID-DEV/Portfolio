@@ -21,7 +21,8 @@ const config = {
 				'/projects/altron',
 				'/projects/svelte docs maker',
 				'/projects/create split app',
-				'/writings/malware persistant and evasion'
+				'/writings/markdown and obsidian',
+				'/writings/svelte the magic framework'
 			]
 		}
 	}
