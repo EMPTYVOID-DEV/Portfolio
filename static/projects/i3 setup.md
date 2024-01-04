@@ -1,5 +1,3 @@
-# I3-Setup
-
 ![logo](/images/i3-setup.png)
 
 **I3 setup** is a personalized Linux i3 configuration, utilizing key packages including i3-gaps-rounded, kitty, Rofi, Polybar, and Betterlockscreen. These enhance the user experience with a rounded-corner tiling window manager, a fast terminal, a versatile window launcher, a customizable status bar, and an integrated lock screen.

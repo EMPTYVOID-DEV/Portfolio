@@ -11,8 +11,8 @@ type routes = 'home' | 'about' | 'skills' | 'projects' | 'writings' | 'contact';
 export const colorsMap = new Map<routes, string>([
 	['home', '#111111'],
 	['about', '#cc3300'],
-	['skills', '#042696'],
-	['projects', '#001f3f'],
+	['skills', '#08a045'],
+	['projects', '#337ab7'],
 	['writings', '#ef7190'],
 	['contact', '#05d69e']
 ]);
@@ -31,7 +31,7 @@ export type months =
 	| 'Nov'
 	| 'Dec';
 
-export let monthsList = [
+export const monthsList = [
 	'Jan',
 	'Feb',
 	'Mar',

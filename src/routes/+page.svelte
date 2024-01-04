@@ -70,17 +70,8 @@
 	}
 	.quote {
 		max-width: 600px;
-		background: linear-gradient(
-			to left,
-			var(--about),
-			var(--skills),
-			var(--projects),
-			var(--writings),
-			var(--contact)
-		);
-		-webkit-background-clip: text;
 		letter-spacing: 2px;
-		color: transparent;
+		color: var(--black);
 		text-align: center;
 	}
 </style>

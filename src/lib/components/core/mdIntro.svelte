@@ -3,14 +3,17 @@
 
 	export let title: string;
 	export let date: { day: number; month: months; year: number };
-	export let readingTime: number;
+	export let readingTime: number = 0;
+	export let isProjects = false;
 </script>
 
 <div class="intro">
-	<h1>{title}</h1>
+	<h1 class:project={isProjects}>{title}</h1>
 	<div class="timing">
 		<span>Created at {date.day}-{date.month}-{date.year}</span>
-		<span>Reading time is about {readingTime} min</span>
+		{#if !isProjects}
+			<span>Reading time is about {readingTime} min</span>
+		{/if}
 	</div>
 </div>
 
@@ -29,7 +32,8 @@
 		text-transform: capitalize;
 		padding: 5px;
 		text-shadow: 0;
-		transition: all 400ms ease;
+		transition: all 400ms cubic-bezier(0.39, 0.575, 0.565, 1);
+		text-align: center;
 	}
 	h1:after {
 		content: '';
@@ -48,8 +52,19 @@
 		);
 		border-radius: 4px;
 		z-index: -1;
-		width: 10%;
-		transition: all 400ms ease;
+		width: 8%;
+		transition: all 400ms cubic-bezier(0.39, 0.575, 0.565, 1);
+	}
+	.project::after {
+		background: linear-gradient(
+			to right,
+			var(--about) 0%,
+			var(--about) 30%,
+			var(--skills) 30%,
+			var(--skills) 60%,
+			var(--projects) 60%,
+			var(--projects) 100%
+		);
 	}
 	h1:hover {
 		color: var(--white);

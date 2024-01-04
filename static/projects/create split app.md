@@ -1,5 +1,3 @@
-# Create split app
-
 ![Split logo](/images/split.png)
 
 The **Split Stack CLI Tool** is a command-line utility designed to streamline the process of initializing a project that embraces a split-stack architecture. This architecture combines the best of server-side rendering (SSR) and client-side rendering (CSR) for enhanced performance and flexibility. The tool helps you set up a project with the following cutting-edge technologies:

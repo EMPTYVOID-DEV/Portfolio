@@ -1,11 +1,12 @@
 <script lang="ts">
 	export let header: string;
 	export let description: string = '';
+	export let size = 1;
 </script>
 
 <div class="description">
 	<div class="header">
-		<h1>{header}</h1>
+		<span style="font-size: var(--h{size});">{header}</span>
 		<span></span>
 	</div>
 	<p>{description}</p>
@@ -22,11 +23,12 @@
 		gap: 10px;
 		align-items: center;
 	}
-	.header h1 {
-		font-size: var(--h1);
+	.header span:first-child {
 		color: var(--primary);
+		text-transform: capitalize;
+		font-weight: bold;
 	}
-	.header span {
+	.header span:last-child {
 		width: 20px;
 		aspect-ratio: 1/1;
 		border-radius: 100%;

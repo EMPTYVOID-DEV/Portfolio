@@ -1,5 +1,3 @@
-# Svelte docs maker
-
 Documentation is crucial for software development, aiding understanding and collaboration. Creating it, however, can be tough. Simplifying this process is vital. Clear documentation acts as a roadmap, aiding navigation, collaboration, and onboarding. Balancing depth and simplicity is key. Tools like Sveltedocsmaker aim to make this easier, promoting better code quality and project success.
 
 ## Easy documentation for svelte devs
