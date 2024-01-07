@@ -48,6 +48,13 @@ export const monthsList = [
 
 export const projects: units = [
 	{
+		title: 'Human trained chess bot',
+		date: { day: 7, month: 'Jan', year: 2024 },
+		description:
+			'In this project i will try to build a chess bot that learns from each game it plays with people.',
+		href: '/projects/Human trained chess bot'
+	},
+	{
 		title: 'i3 Setup',
 		date: { day: 5, month: 'Dec', year: 2023 },
 		description:
@@ -63,7 +70,7 @@ export const projects: units = [
 	},
 	{
 		title: 'svelte docs maker',
-		date: { day: 20, month: 'Sep', year: 2023 },
+		date: { day: 20, month: 'Oct', year: 2023 },
 		description:
 			'Sveltedocsmaker is a package that simplifies the process of building your documentation route using Svelte components',
 		href: '/projects/svelte docs maker'

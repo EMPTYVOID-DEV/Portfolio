@@ -58,10 +58,10 @@
 	.project::after {
 		background: linear-gradient(
 			to right,
-			var(--about) 0%,
-			var(--about) 30%,
-			var(--skills) 30%,
-			var(--skills) 60%,
+			var(--contact) 0%,
+			var(--contact) 30%,
+			var(--writings) 30%,
+			var(--writings) 60%,
 			var(--projects) 60%,
 			var(--projects) 100%
 		);
@@ -83,7 +83,7 @@
 		gap: 5px;
 	}
 	.timing span {
-		color: var(--writings);
+		color: var(--primary);
 		font-weight: bold;
 	}
 </style>

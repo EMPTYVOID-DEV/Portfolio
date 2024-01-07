@@ -3,8 +3,6 @@
 	import Description from '$lib/components/core/description.svelte';
 	import { colorsMap } from '$lib/utils/consts';
 	import { onMount } from 'svelte';
-	import { elasticIn } from 'svelte/easing';
-	import { fade } from 'svelte/transition';
 	const skills: {
 		type: 'frontend' | 'backend' | 'general';
 		desc: string;
