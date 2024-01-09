@@ -60,7 +60,7 @@
 		border-radius: 4px;
 	}
 	.details ol li:nth-child(2n) {
-		background-color: var(--projects);
+		background-color: var(--contact);
 	}
 	.details ol li:nth-child(2n + 1) {
 		background-color: var(--writings);

@@ -10,7 +10,8 @@
 			title: "Bachelor's degree , Computer science",
 			description:
 				'I got Bachelors degreen in computer science at ferhat abbas university with score equal to 16.18.',
-			href: 'https://fsciences.univ-setif.dz/'
+			href: 'https://fsciences.univ-setif.dz/',
+			tags: ['Bachelors', 'computer science']
 		}
 	];
 	onMount(() => {

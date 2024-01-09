@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { units } from '$lib/utils/consts';
 	import { compareDates } from '$lib/utils/functions';
+	import Tags from './tags.svelte';
 	export let units: units = [];
 	units = units.sort((a, b) => compareDates(a.date, b.date));
 </script>
@@ -12,6 +13,7 @@
 			<div class="des">
 				<span class="title">{unit.title}</span>
 				<p>{unit.description}</p>
+				<Tags tags={unit.tags} />
 			</div>
 		</a>
 	{/each}

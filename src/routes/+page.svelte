@@ -71,7 +71,22 @@
 	.quote {
 		max-width: 600px;
 		letter-spacing: 2px;
-		color: var(--black);
+		background: linear-gradient(
+			to right,
+			var(--about),
+			var(--about),
+			var(--projects),
+			var(--projects),
+			var(--skills),
+			var(--skills),
+			var(--writings),
+			var(--writings),
+			var(--contact),
+			var(--contact)
+		);
+		background-clip: text;
+		-webkit-background-clip: text;
+		color: transparent;
 		text-align: center;
 	}
 </style>
