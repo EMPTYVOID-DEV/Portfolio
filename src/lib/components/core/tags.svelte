@@ -24,6 +24,6 @@
 		text-align: center;
 		border-radius: 22px;
 		text-transform: capitalize;
-		background-color: color-mix(in srgb, var(--contact) 60%, white 0%);
+		background-color: color-mix(in srgb, var(--primary) 60%, white 0%);
 	}
 </style>

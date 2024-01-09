@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { quadInOut } from 'svelte/easing';
 	export let name: string;
 	export let src: string;
 	export let contrast: number = 1;

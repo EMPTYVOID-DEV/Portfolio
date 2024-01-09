@@ -1,6 +1,8 @@
 <script lang="ts">
 	import Card from '$lib/components/core/card.svelte';
 	import TextWriting from '$lib/components/core/textWriting.svelte';
+	import { quadIn, quartInOut } from 'svelte/easing';
+	import { fly } from 'svelte/transition';
 	import { colorsMap } from '$lib/utils/consts';
 	import { onMount } from 'svelte';
 	let quote =
@@ -30,6 +32,7 @@
 		}
 	];
 	let visible = false;
+
 	onMount(() => {
 		visible = true;
 		document.documentElement.style.setProperty('--primary', colorsMap.get('home'));
@@ -37,12 +40,21 @@
 </script>
 
 <div class="home">
-	<div class="cards">
-		{#each cards as card}
-			<a href="/{card.name}"><Card {...card} /></a>
-		{/each}
-	</div>
 	{#if visible}
+		<div class="cards">
+			{#each cards as card, idx}
+				<a
+					href="/{card.name}"
+					in:fly|global={{
+						duration: 1000,
+						delay: 100 * idx,
+						x: -100 * (idx + 1),
+						y: -100 * (idx + 1),
+						easing: quartInOut
+					}}><Card {...card} /></a
+				>
+			{/each}
+		</div>
 		<TextWriting>
 			<h4 class="quote">{quote}</h4>
 		</TextWriting>
