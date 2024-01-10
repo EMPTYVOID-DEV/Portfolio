@@ -21,9 +21,10 @@ const config = {
 				'/projects/altron',
 				'/projects/svelte docs maker',
 				'/projects/create split app',
-				'/projects/Human trained chess bot',
+				'/projects/human trained chess bot',
 				'/writings/markdown and obsidian',
-				'/writings/svelte the magic framework'
+				'/writings/svelte the magic framework',
+				'/writings/component driven development'
 			]
 		}
 	}

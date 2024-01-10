@@ -12,15 +12,14 @@
 <style>
 	ul,
 	ol {
-		margin-left: 18px;
 		display: flex;
 		flex-direction: column;
 		gap: 10px;
 	}
-	ul {
-		list-style: disc;
-	}
-	ol {
-		list-style: decimal;
+	:is(ol, ul) :global(li) {
+		background-color: color-mix(in srgb, var(--primary) 70%, white 0%);
+		padding-block: 2px;
+		padding-inline: 4px;
+		border-radius: 4px;
 	}
 </style>

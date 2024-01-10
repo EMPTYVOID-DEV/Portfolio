@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Card from '$lib/components/core/card.svelte';
 	import TextWriting from '$lib/components/core/textWriting.svelte';
-	import { quadIn, quartInOut } from 'svelte/easing';
+	import { quartInOut } from 'svelte/easing';
 	import { fly } from 'svelte/transition';
 	import { colorsMap } from '$lib/utils/consts';
 	import { onMount } from 'svelte';
@@ -39,6 +39,9 @@
 	});
 </script>
 
+
+
+	
 <div class="home">
 	{#if visible}
 		<div class="cards">

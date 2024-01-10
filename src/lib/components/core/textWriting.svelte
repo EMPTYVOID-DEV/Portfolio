@@ -1,10 +1,11 @@
 <script lang="ts">
 	import { quadInOut } from 'svelte/easing';
-
-	function write(node: HTMLSpanElement, { speed }: { speed: number }) {
+	export let speed = 2;
+	export let durationPerWord = 120;
+	function write(node: HTMLSpanElement) {
 		const child = node.childNodes.item(0);
 		const text = child.textContent;
-		const duration = (text.length / speed) * 120;
+		const duration = (text.length / speed) * durationPerWord;
 		return {
 			duration,
 			easing: quadInOut,
@@ -16,6 +17,6 @@
 	}
 </script>
 
-<div transition:write={{ speed: 2 }}>
+<div transition:write>
 	<slot />
 </div>

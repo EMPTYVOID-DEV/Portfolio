@@ -53,7 +53,7 @@ export const projects: units = [
 		date: { day: 7, month: 'Jan', year: 2024 },
 		description:
 			'In this project i will try to build a chess bot that learns from each game it plays with people.',
-		href: '/projects/Human trained chess bot',
+		href: '/projects/human trained chess bot',
 		tags: ['chess', 'machine learning', 'bots']
 	},
 	{
@@ -106,5 +106,13 @@ export const writings: units = [
 		href: '/writings/svelte the magic framework',
 		readingTime: 8,
 		tags: ['svelte', 'frontend frameworks']
+	},
+	{
+		title: 'Component driven development',
+		href: '/writings/component driven development',
+		description: 'Let talk about component driven development best practices',
+		readingTime: 12,
+		tags: ['CDD', 'frontend', 'svelte'],
+		date: { day: 10, month: 'Jan', year: 2024 }
 	}
 ];

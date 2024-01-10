@@ -59,11 +59,8 @@
 		padding: 5px;
 		border-radius: 4px;
 	}
-	.details ol li:nth-child(2n) {
-		background-color: var(--contact);
-	}
-	.details ol li:nth-child(2n + 1) {
-		background-color: var(--writings);
+	.details ol li {
+		background-color: color-mix(in srgb, var(--primary) 70%, white 0%);
 	}
 	@media screen and (width < 768px) {
 		.projects {
