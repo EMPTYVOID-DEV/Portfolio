@@ -49,8 +49,15 @@ export const monthsList = [
 
 export const projects: units = [
 	{
+		title: 'InfoSphere',
+		date: { day: 12, month: 'Jan', year: 2024 },
+		description: 'Search based note taking app to speed up your productivity',
+		href: '/projects/InfoSphere',
+		tags: ['desktop apps', 'sveltekit', 'notes', 'cheat sheet']
+	},
+	{
 		title: 'Human trained chess bot',
-		date: { day: 7, month: 'Jan', year: 2024 },
+		date: { day: 12, month: 'Feb', year: 2024 },
 		description:
 			'In this project i will try to build a chess bot that learns from each game it plays with people.',
 		href: '/projects/human trained chess bot',

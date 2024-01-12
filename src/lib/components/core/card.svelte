@@ -25,7 +25,10 @@
 	}
 	.card:hover {
 		border: 2px solid var(--primary);
-		box-shadow: 4px 4px 10px var(--primary);
+		box-shadow:
+			4px 4px 8px var(--primary),
+			4px 4px 8px var(--primary),
+			4px 4px 8px var(--primary);
 	}
 	.card img {
 		width: 90%;

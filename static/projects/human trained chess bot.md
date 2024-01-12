@@ -1,4 +1,4 @@
-### IN DEVELOPMENT
+## Brain Storming
 
 ![chess-image](/images/chess.webp)
 

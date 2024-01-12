@@ -39,9 +39,6 @@
 	});
 </script>
 
-
-
-	
 <div class="home">
 	{#if visible}
 		<div class="cards">
