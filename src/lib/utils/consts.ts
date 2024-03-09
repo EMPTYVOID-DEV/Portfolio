@@ -49,11 +49,11 @@ export const projects: units = [
 		title: 'Zero-UI',
 		date: { day: 9, month: 'Mar', year: 2024 },
 		description: 'This is an easy to use svelte ui library',
-		href: '/projects/Zero-UI',
+		href: '/projects/zero-ui',
 		tags: ['svelte', 'UI libraries', 'jsdoc', 'Cli']
 	},
 	{
-		title: 'i3 Setup',
+		title: 'I3 Setup',
 		date: { day: 5, month: 'Dec', year: 2023 },
 		description:
 			'This is package used to automate the configuration for i3 tailing window manager with polybar,rofi,betterlockscreen,kitty. ',
@@ -61,7 +61,7 @@ export const projects: units = [
 		tags: ['linux', 'i3', 'automation']
 	},
 	{
-		title: 'altron',
+		title: 'Altron',
 		date: { day: 19, month: 'Nov', year: 2023 },
 		description:
 			'Altron is a robust and versatile rich text editor designed for Svelte applications. It empowers users to effortlessly create, edit, and manage structured text content by seamlessly incorporating various blocks with associated dat',
@@ -69,7 +69,7 @@ export const projects: units = [
 		tags: ['svelte', 'rich text editor', 'npm']
 	},
 	{
-		title: 'svelte docs maker',
+		title: 'Svelte Docs Maker',
 		date: { day: 20, month: 'Oct', year: 2023 },
 		description:
 			'Sveltedocsmaker is a package that simplifies the process of building your documentation route using Svelte components',
@@ -77,7 +77,7 @@ export const projects: units = [
 		tags: ['svelte', 'documentation', 'npm']
 	},
 	{
-		title: 'create split app',
+		title: 'Create Split App',
 		date: { day: 6, month: 'Sep', year: 2023 },
 		description:
 			'The Split Stack CLI Tool is a command-line utility designed to streamline the process of initializing a project that combines bleeding edge technologies around sveltekit',
