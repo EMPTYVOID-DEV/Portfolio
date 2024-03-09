@@ -15,10 +15,6 @@ html {
 }
 
 :root {
-	/* default font sizes polled from https://websemantics.uk/tools/responsive-font-calculator/
-	 responsive font sizes for screens between 768px-1920px
-	 min value of the clamp function will  work where screen width is under or equal to 768px
-	 max  value of the clamp function will  work where screen width is above or equal to 1920px */
 	--huge: clamp(3.8rem, calc(3.8rem + ((1vw - 0.48rem) * 1.3889)), 4.8rem);
 	--h1: clamp(2.8rem, calc(2.8rem + ((1vw - 0.48rem) * 1.3889)), 3.8rem);
 	--h2: clamp(2rem, calc(2rem + ((1vw - 0.48rem) * 1.3889)), 3rem);
@@ -42,17 +38,17 @@ html {
 	--font: 'Spline Sans Mono', monospace;
 	--defaultFont: Arial, Helvetica, sans-serif;
 
-	/* default colors polled from https://clrs.cc/ */
 	--red: #c90f0f;
 	--primary: #111111;
 	--home: #111111;
 	--about: #cc3300;
-	--skills: #08a045;
+	--skills: #37c215;
 	--writings: #ef7190;
 	--projects: #337ab7;
 	--contact: #05d69e;
 	--black: #111111;
 	--white: #ffffff;
+	--muted: #5f5f5f;
 }
 
 h1,
@@ -93,4 +89,17 @@ th {
 	font-weight: 400;
 	word-break: break-word;
 	white-space: pre-wrap;
+}
+
+* ::-webkit-scrollbar {
+	width: 0.5rem;
+}
+* ::-webkit-scrollbar-track {
+	border-radius: 0;
+	background: color-mix(in srgb, var(--black) 40%, transparent 60%);
+}
+
+* ::-webkit-scrollbar-thumb {
+	border-radius: 4px;
+	background: var(--primary);
 }

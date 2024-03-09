@@ -83,22 +83,15 @@
 	.quote {
 		max-width: 600px;
 		letter-spacing: 2px;
-		background: linear-gradient(
-			to right,
-			var(--about),
-			var(--about),
-			var(--projects),
-			var(--projects),
-			var(--skills),
-			var(--skills),
-			var(--writings),
-			var(--writings),
-			var(--contact),
-			var(--contact)
-		);
-		background-clip: text;
-		-webkit-background-clip: text;
-		color: transparent;
+		color: var(--primary);
 		text-align: center;
+	}
+	@media screen and (width<768px) {
+		.home {
+			padding-bottom: 20px;
+		}
+		.quote {
+			width: 95%;
+		}
 	}
 </style>

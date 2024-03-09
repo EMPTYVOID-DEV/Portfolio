@@ -2,16 +2,16 @@
 	export let name: string;
 	export let src: string;
 	export let contrast: number = 1;
-	export let width = 150;
 </script>
 
-<div class="card" style="width: {width}px;">
+<div class="card">
 	<img {src} alt={name} style="filter: contrast({contrast});" />
 	<span>{name}</span>
 </div>
 
 <style>
 	.card {
+		width: var(--width, 150px);
 		aspect-ratio: 3/4;
 		background-color: transparent;
 		display: flex;
@@ -31,7 +31,7 @@
 			4px 4px 8px var(--primary);
 	}
 	.card img {
-		width: 90%;
+		width: var(--imgSize, 90%);
 		aspect-ratio: 1/1;
 		object-position: center;
 		object-fit: contain;
@@ -42,7 +42,7 @@
 	}
 	@media screen and (width < 768px) {
 		.card {
-			width: 120px;
+			width: var(--width, 120px);
 		}
 	}
 </style>

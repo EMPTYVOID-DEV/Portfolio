@@ -3,7 +3,7 @@
 	import Units from '$lib/components/core/units.svelte';
 	import { colorsMap, type units } from '$lib/utils/consts';
 	import { onMount } from 'svelte';
-	let description = `My name is aymen keskas also known as "empty void" a 21 year old independent web creator with a focus on building robust infrastructures using Node.js, particularly passionate about SvelteKit. Proficient in both frontend and backend development, utilizing Svelte and React for visually appealing user interfaces.`;
+	let description = `I'm Keskas Aymen, a 21-year-old independent web creator based in Algeria. My passion lies in crafting exceptional user interfaces, utilizing the latest and most advanced tools available.`;
 	let awards: units = [
 		{
 			date: { day: 5, month: 'Jun', year: 2023 },

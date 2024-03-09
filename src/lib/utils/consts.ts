@@ -12,25 +12,11 @@ type routes = 'home' | 'about' | 'skills' | 'projects' | 'writings' | 'contact';
 export const colorsMap = new Map<routes, string>([
 	['home', '#111111'],
 	['about', '#cc3300'],
-	['skills', '#4CAF50'],
+	['skills', '#37c215'],
 	['projects', '#337ab7'],
 	['writings', '#ef7190'],
 	['contact', '#05d69e']
 ]);
-
-export type months =
-	| 'Jan'
-	| 'Feb'
-	| 'Mar'
-	| 'Apr'
-	| 'May'
-	| 'Jun'
-	| 'Jul'
-	| 'Aug'
-	| 'Sep'
-	| 'Oct'
-	| 'Nov'
-	| 'Dec';
 
 export const monthsList = [
 	'Jan',
@@ -45,23 +31,26 @@ export const monthsList = [
 	'Oct',
 	'Nov',
 	'Dec'
-];
+] as const;
+
+export type months = (typeof monthsList)[number];
+
+export const skills = new Map([
+	['Frontend', ['sveltekit', 'react', 'tailwind', 'postcss', 'figma', 'vite']],
+	['Backend', ['nodejs', 'mongodb', 'postgresql', 'expressJs', 'lucia', 'prisma']],
+	[
+		'General',
+		['typescript', 'zod', 'docker', 'python', 'git', 'puppeteer', 'linux', 'jest', 'pnpm']
+	]
+]);
 
 export const projects: units = [
 	{
-		title: 'InfoSphere',
-		date: { day: 12, month: 'Jan', year: 2024 },
-		description: 'Search based note taking app to speed up your productivity',
-		href: '/projects/InfoSphere',
-		tags: ['desktop apps', 'sveltekit', 'notes', 'cheat sheet']
-	},
-	{
-		title: 'Human trained chess bot',
-		date: { day: 12, month: 'Feb', year: 2024 },
-		description:
-			'In this project i will try to build a chess bot that learns from each game it plays with people.',
-		href: '/projects/human trained chess bot',
-		tags: ['chess', 'machine learning', 'bots']
+		title: 'Zero-UI',
+		date: { day: 9, month: 'Mar', year: 2024 },
+		description: 'This is an easy to use svelte ui library',
+		href: '/projects/Zero-UI',
+		tags: ['svelte', 'UI libraries', 'jsdoc', 'Cli']
 	},
 	{
 		title: 'i3 Setup',
