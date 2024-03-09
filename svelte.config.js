@@ -21,8 +21,7 @@ const config = {
 				'/projects/altron',
 				'/projects/svelte docs maker',
 				'/projects/create split app',
-				'/projects/human trained chess bot',
-				'/projects/InfoSphere',
+				'/projects/zero-ui',
 				'/writings/markdown and obsidian',
 				'/writings/svelte the magic framework',
 				'/writings/component driven development'
