@@ -29,7 +29,8 @@
 				<a target="_blank" href="https://www.linkedin.com/in/aymen-keskas/"
 					><i class="fa-brands fa-linkedin"></i></a
 				>
-				<a target="_blank" href="https://github.com/Shinji13"><i class="fa-brands fa-github"></i></a
+				<a target="_blank" href="https://github.com/EMPTYVOID-DEV"
+					><i class="fa-brands fa-github"></i></a
 				>
 			</div>
 		</div>

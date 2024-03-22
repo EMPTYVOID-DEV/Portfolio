@@ -37,7 +37,7 @@ export type months = (typeof monthsList)[number];
 
 export const skills = new Map([
 	['Frontend', ['sveltekit', 'react', 'tailwind', 'postcss', 'figma', 'vite']],
-	['Backend', ['nodejs', 'mongodb', 'postgresql', 'expressJs', 'lucia', 'prisma']],
+	['Backend', ['nodejs', 'mongodb', 'postgresql', 'expressJs', 'lucia', 'prisma', 'drizzle']],
 	[
 		'General',
 		['typescript', 'zod', 'docker', 'python', 'git', 'puppeteer', 'linux', 'jest', 'pnpm']
