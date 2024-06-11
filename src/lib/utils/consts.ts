@@ -36,8 +36,8 @@ export const monthsList = [
 export type months = (typeof monthsList)[number];
 
 export const skills = new Map([
-	['Frontend', ['sveltekit', 'react', 'tailwind', 'postcss', 'figma', 'vite']],
-	['Backend', ['nodejs', 'mongodb', 'postgresql', 'expressJs', 'lucia', 'prisma', 'drizzle']],
+	['Frontend', ['react', 'svelte(kit)', 'tailwind', 'postcss', 'figma', 'vite']],
+	['Backend', ['nodejs', 'mongodb', 'postgresql', 'expressJs', 'lucia', 'drizzle', 'prisma']],
 	[
 		'General',
 		['typescript', 'zod', 'docker', 'python', 'git', 'puppeteer', 'linux', 'jest', 'pnpm']
@@ -46,19 +46,26 @@ export const skills = new Map([
 
 export const projects: units = [
 	{
+		title: 'Tmhub-api',
+		date: { day: 10, month: 'May', year: 2024 },
+		description: 'An api for a crm.',
+		href: '/projects/tmhub-api',
+		tags: ['node', 'express', 'typescript', 'Maria db']
+	},
+	{
+		title: 'The_tale',
+		date: { day: 3, month: 'Apr', year: 2024 },
+		description:
+			'The tale is a plataform that enables people to collaborate in order to create writings and control everything from the structure, colors, fonts, references, and more. ',
+		href: '/projects/the_tale',
+		tags: ['sveltekit', 'lucia', 'postgresql', 'drizzle', 'zero-ui']
+	},
+	{
 		title: 'Zero-UI',
 		date: { day: 9, month: 'Mar', year: 2024 },
 		description: 'This is an easy to use svelte ui library',
 		href: '/projects/zero-ui',
 		tags: ['svelte', 'UI libraries', 'jsdoc', 'Cli']
-	},
-	{
-		title: 'I3 Setup',
-		date: { day: 5, month: 'Dec', year: 2023 },
-		description:
-			'This is package used to automate the configuration for i3 tailing window manager with polybar,rofi,betterlockscreen,kitty. ',
-		href: '/projects/i3 setup',
-		tags: ['linux', 'i3', 'automation']
 	},
 	{
 		title: 'Altron',

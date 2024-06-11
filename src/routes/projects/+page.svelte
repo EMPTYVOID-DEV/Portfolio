@@ -3,8 +3,8 @@
 	import Units from '$lib/components/core/units.svelte';
 	import { colorsMap, projects } from '$lib/utils/consts';
 	import { onMount } from 'svelte';
-	let description =
-		'Discover a range of projects spanning web development, cyber security, and machine learning. From interactive React and Svelte Kit applications to robust Express backend systems, witness the fusion of innovative technologies';
+	let description = `Discover a range of projects spanning web development, cyber security, and machine learning. From interactive React and Svelte Kit applications to robust Express backend systems, witness the fusion of innovative technologies. 
+	`;
 
 	onMount(() => {
 		document.documentElement.style.setProperty('--primary', colorsMap.get('projects'));

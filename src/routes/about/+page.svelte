@@ -3,7 +3,7 @@
 	import Units from '$lib/components/core/units.svelte';
 	import { colorsMap, type units } from '$lib/utils/consts';
 	import { onMount } from 'svelte';
-	let description = `I'm Keskas Aymen, a 21-year-old independent web creator based in Algeria. My passion lies in crafting exceptional user interfaces, utilizing the latest and most advanced tools available.`;
+	let description = `I'm Keskas Aymen, a 23-year-old independent web creator based in Algeria. My passion lies in crafting exceptional user interfaces, utilizing the latest and most advanced tools available, this year i am pursing a master's degree in cybersecurity.`;
 	let awards: units = [
 		{
 			date: { day: 5, month: 'Jun', year: 2023 },

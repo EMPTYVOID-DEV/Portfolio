@@ -17,11 +17,12 @@ const config = {
 		adapter: adapter(),
 		prerender: {
 			entries: [
-				'/projects/i3 setup',
 				'/projects/altron',
 				'/projects/svelte docs maker',
 				'/projects/create split app',
 				'/projects/zero-ui',
+				'/projects/the_tale',
+				'/projects/tmhub-api',
 				'/writings/markdown and obsidian',
 				'/writings/svelte the magic framework',
 				'/writings/component driven development'

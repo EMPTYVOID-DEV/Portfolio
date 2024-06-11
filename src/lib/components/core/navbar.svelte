@@ -6,8 +6,8 @@
 
 <div class="nav">
 	<a class="logo" href="/">
-		<h3>EMPTY</h3>
-		<h3>VOID</h3>
+		<h3>KESKAS</h3>
+		<h3>AYMEN</h3>
 	</a>
 	{#if $page.url.pathname != '/'}
 		<!-- svelte-ignore a11y-click-events-have-key-events -->

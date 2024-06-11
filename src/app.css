@@ -38,9 +38,9 @@ html {
 	--font: 'Spline Sans Mono', monospace;
 	--defaultFont: Arial, Helvetica, sans-serif;
 
-	--red: #c90f0f;
 	--primary: #111111;
 	--home: #111111;
+	--red: #c90f0f;
 	--about: #cc3300;
 	--skills: #37c215;
 	--writings: #ef7190;
