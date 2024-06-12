@@ -4,7 +4,7 @@
 	import { colorsMap, writings, type units } from '$lib/utils/consts';
 	import { onMount } from 'svelte';
 	let description = `
-Embark on a journey through the dynamic landscape of web development, cyber security, and machine learning with a focus on React and Svelte. As an Indie creator, I share insights into crafting seamless user interfaces, securing digital landscapes, and applying machine learning in real-world scenarios`;
+Embark on a journey through the dynamic landscape of web development, cyber security, and machine learning with a focus on React and Svelte.`;
 
 	onMount(() => {
 		document.documentElement.style.setProperty('--primary', colorsMap.get('writings'));

@@ -7,8 +7,7 @@
 	import General from '$lib/components/icons/docker.svelte';
 	import { colorsMap, skills } from '$lib/utils/consts';
 	import { onMount } from 'svelte';
-	let description = `I'm a seasoned developer, handling both frontend and backend tasks. On the frontend, I work with React and Svelte(kit), styling with Tailwind CSS, and collaborating on UI designs with Figma. On the backend, I specialize in Node.js, Express, Drizzle, and Lucia-auth. I'm comfortable with both SQL (PostgreSQL) and NoSQL (MongoDB) databases. I use TypeScript for type safety, Puppeteer for web automation, and Zod for schema validation. Plus, I'm skilled in Python, Linux, Git, Docker, and pnpm workspaces. And yeah, I'm diving into cyber-security too.
-	`;
+	let description = `I am a web developer skilled in frontend (React, Svelte) and backend (Node.js, Express) technologies, utilizing tools like TypeScript, Git, Docker, and exploring cyber-security.`;
 	let activeTab = 0;
 	onMount(() => {
 		document.documentElement.style.setProperty('--primary', colorsMap.get('skills'));
