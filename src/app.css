@@ -1,3 +1,19 @@
+@font-face {
+	font-family: spline;
+	src: url('./lib/assets/fonts/spline-sans-mono-latin-400-normal.woff2');
+	font-weight: 400;
+}
+@font-face {
+	font-family: spline;
+	src: url('./lib/assets/fonts/spline-sans-mono-latin-600-normal.woff2');
+	font-weight: 600;
+}
+@font-face {
+	font-family: spline;
+	src: url('./lib/assets/fonts/spline-sans-mono-latin-700-normal.woff2');
+	font-weight: 700;
+}
+
 a {
 	color: inherit;
 	text-decoration: none;
@@ -35,7 +51,7 @@ html {
 	--lh4: 1.5;
 	--lhbody: 1.6;
 
-	--font: 'Spline Sans Mono', monospace;
+	--font: spline, monospace;
 	--defaultFont: Arial, Helvetica, sans-serif;
 
 	--primary: #111111;

@@ -14,7 +14,7 @@
 	"dependencies": {
 		"@prisma/client": "5.7.1",
 		"@types/node": "^20.10.6",
-		"svelte-highlight": "^7.4.7",
+		"shiki": "^1.10.0",
 		"svelte-markdown": "^0.4.1"
 	},
 	"devDependencies": {
@@ -25,6 +25,7 @@
 		"@typescript-eslint/parser": "^6.8.0",
 		"eslint": "^8.28.0",
 		"eslint-config-prettier": "^8.5.0",
+		"fp-ts": "^2.16.6",
 		"prettier": "^3.0.2",
 		"prettier-plugin-svelte": "^3.0.3",
 		"svelte": "^4.0.5",

@@ -1,5 +1,8 @@
 <script lang="ts">
 	import Description from '$lib/components/core/description.svelte';
+	import Github from '$lib/components/icons/github.svelte';
+	import Linkedin from '$lib/components/icons/linkedin.svelte';
+	import Twitter from '$lib/components/icons/twitter.svelte';
 	import { colorsMap } from '$lib/utils/consts';
 	import { onMount } from 'svelte';
 	let description =
@@ -23,15 +26,9 @@
 		<div class="section">
 			<h4>Socials</h4>
 			<div class="socials">
-				<a target="_blank" href="https://twitter.com/soskue_aizen"
-					><i class="fa-brands fa-x-twitter"></i></a
-				>
-				<a target="_blank" href="https://www.linkedin.com/in/aymen-keskas/"
-					><i class="fa-brands fa-linkedin"></i></a
-				>
-				<a target="_blank" href="https://github.com/EMPTYVOID-DEV"
-					><i class="fa-brands fa-github"></i></a
-				>
+				<a target="_blank" href="https://twitter.com/soskue_aizen"><Twitter /></a>
+				<a target="_blank" href="https://www.linkedin.com/in/aymen-keskas/"><Linkedin /></a>
+				<a target="_blank" href="https://github.com/EMPTYVOID-DEV"><Github /></a>
 			</div>
 		</div>
 	</div>

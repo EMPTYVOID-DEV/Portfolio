@@ -1,74 +1,87 @@
 <script lang="ts">
-	import { HighlightAuto, LineNumbers } from 'svelte-highlight';
-	import 'svelte-highlight/styles/onedark.css';
-	import CopyIcon from '$lib/components/icons/copy.svelte';
-	import DoneIcon from '$lib/components/icons/done.svelte';
+	import { altronTheme } from '../../utils/consts';
+	import { getSingletonHighlighterCore } from 'shiki';
+	import getWasm from 'shiki/wasm';
+	import CopyIcon from '../icons/copy.svelte';
+	import DoneIcon from '../icons/done.svelte';
+	import { onMount } from 'svelte';
 	export let text: string;
 	export let lang: string;
-	let copyStatement: boolean = false;
-	async function copyCode(e: MouseEvent) {
+	let copyStatement = false;
+	let code = text;
+
+	function copyCode() {
 		navigator.clipboard.writeText(text);
 		copyStatement = true;
-		await new Promise((res) => setTimeout(res, 800));
-		copyStatement = false;
+		new Promise((res) => setTimeout(res, 800)).then(() => (copyStatement = false));
 	}
+	onMount(async () => {
+		const { bundledLanguages } = await import('shiki/langs');
+		const importFn = (bundledLanguages as any)[lang.toLowerCase()];
+		const highlighter = await getSingletonHighlighterCore({
+			loadWasm: getWasm,
+			themes: [altronTheme],
+			langs: []
+		});
+		await highlighter.loadLanguage(await importFn());
+		code = highlighter.codeToHtml(text, {
+			lang: lang.toLowerCase(),
+			theme: 'altronTheme'
+		});
+	});
 </script>
 
-<div id="codeMdBlock" class={lang}>
-	<div id="lang">
+<div class="viewCode">
+	<div class="lang">
 		<span>{lang}</span>
-		<!-- svelte-ignore a11y-click-events-have-key-events -->
-		<!-- svelte-ignore a11y-no-static-element-interactions -->
 		{#if !copyStatement}
-			<span on:click|stopPropagation={copyCode}><CopyIcon /></span>
+			<button on:click|stopPropagation={copyCode} class="control"
+				><svelte:component this={CopyIcon} /></button
+			>
 		{:else}
-			<span><DoneIcon /></span>
+			<svelte:component this={DoneIcon} />
 		{/if}
 	</div>
-
-	<HighlightAuto code={text} let:highlighted>
-		<LineNumbers {highlighted} hideBorder wrapLines />
-	</HighlightAuto>
+	<div class="content">
+		{@html code}
+	</div>
 </div>
 
 <style>
-	#codeMdBlock {
+	.viewCode {
 		width: 100%;
 		display: flex;
 		flex-direction: column;
+		border-radius: 0.3rem;
+		overflow: hidden;
+		background-color: color-mix(in srgb, var(--primary) 25%, var(--white) 75%);
 	}
-	#codeMdBlock :global(> :not(#lang)) {
+
+	.lang {
 		width: 100%;
-		border-bottom-left-radius: 5px;
-		border-bottom-right-radius: 5px;
-	}
-
-	#codeMdBlock :global(tr) {
-		display: block;
-	}
-
-	#codeMdBlock :global(:is(td, th)) {
-		white-space: unset;
-	}
-
-	#codeMdBlock #lang {
-		width: 100%;
-		border-top-left-radius: 5px;
-		border-top-right-radius: 5px;
-		background-color: var(--primary800);
+		background-color: transparent;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		padding-inline: 10px;
-		padding-block: 5lpx;
+		padding-inline: 0.75rem;
+		padding-block: 0.25rem;
+		background-color: var(--primary);
 	}
 
-	#codeMdBlock #lang span {
-		color: var(--white);
-		font-weight: bold;
+	.lang span {
+		font-weight: 600;
 		text-transform: capitalize;
+		color: var(--black);
 	}
-	#codeMdBlock #lang span:last-child {
+	.control {
+		all: unset;
 		cursor: pointer;
+	}
+	.content {
+		width: 100%;
+		background-color: color-mix(in srgb, var(--black) 8%, transparent 92%);
+		padding-inline: 0.75rem;
+		padding-block: 0.25rem;
+		color: var(--black);
 	}
 </style>

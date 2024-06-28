@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { quadIn, quadInOut } from 'svelte/easing';
+	import { quadIn } from 'svelte/easing';
 	export let speed = 2;
 	export let durationPerWord = 125;
 	function write(node: HTMLSpanElement) {

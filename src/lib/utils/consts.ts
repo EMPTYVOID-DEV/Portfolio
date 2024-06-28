@@ -1,3 +1,5 @@
+import type { ThemeInput } from 'shiki';
+
 export type units = {
 	title: string;
 	date: { month: months; day: number; year: number };
@@ -36,7 +38,7 @@ export const monthsList = [
 export type months = (typeof monthsList)[number];
 
 export const skills = new Map([
-	['Frontend', ['react', 'svelte(kit)', 'tailwind', 'postcss', 'figma', 'vite']],
+	['Frontend', ['react', 'svelte(kit)', 'nextjs', 'tailwind', 'postcss', 'figma', 'vite']],
 	['Backend', ['nodejs', 'mongodb', 'postgresql', 'expressJs', 'lucia', 'drizzle', 'prisma']],
 	[
 		'General',
@@ -45,6 +47,13 @@ export const skills = new Map([
 ]);
 
 export const projects: units = [
+	{
+		date: { day: 19, month: 'Jun', year: 2024 },
+		href: '/projects/visual-tweak',
+		tags: ['nextjs', 'react', 'sharp.js', 'tailwind', 'image processing'],
+		title: 'Visual-tweak',
+		description: 'Visual-tweak is a web app that provides image processing tools for developers.'
+	},
 	{
 		title: 'Tmhub-api',
 		date: { day: 10, month: 'May', year: 2024 },
@@ -95,6 +104,15 @@ export const projects: units = [
 
 export const writings: units = [
 	{
+		title: 'Functional programming',
+		date: { day: 28, month: 'Jun', year: 2024 },
+		description:
+			'Learn functional programming with TypeScript and fp-ts to write efficient, maintainable code. Implement key concepts like immutability, pure functions, and monads using these tools.',
+		href: '/writings/functional programming',
+		readingTime: 20,
+		tags: ['functional programming', 'typescript', 'fp-ts']
+	},
+	{
 		title: 'markdown and obsidian',
 		date: { day: 21, month: 'Oct', year: 2023 },
 		description: 'We gonna talk about how you can use markdown to make your life much easier.',
@@ -119,3 +137,65 @@ export const writings: units = [
 		date: { day: 10, month: 'Jan', year: 2024 }
 	}
 ];
+
+export const altronTheme: ThemeInput = {
+	name: 'altronTheme',
+	bg: 'transparent',
+	fg: 'var(--foregroundColor)',
+	settings: [
+		{
+			scope: ['comment'],
+			settings: {
+				foreground: 'color-mix(in srgb, var(--primary) 90%, black)'
+			}
+		},
+		{
+			scope: ['string'],
+			settings: {
+				foreground: 'color-mix(in srgb, var(--primary) 80%, black)'
+			}
+		},
+		{
+			scope: ['keyword'],
+			settings: {
+				foreground: 'color-mix(in srgb, var(--primary) 95%, black)'
+			}
+		},
+		{
+			scope: ['constant'],
+			settings: {
+				foreground: 'color-mix(in srgb, var(--primary) 80%, black)'
+			}
+		},
+		{
+			scope: ['parameter'],
+			settings: {
+				foreground: 'color-mix(in srgb, var(--primary) 100%, black)'
+			}
+		},
+		{
+			scope: ['function'],
+			settings: {
+				foreground: 'color-mix(in srgb, var(--primary) 95%, white 5%)'
+			}
+		},
+		{
+			scope: ['string-expression'],
+			settings: {
+				foreground: 'color-mix(in srgb, var(--primary) 90%, white 10%)'
+			}
+		},
+		{
+			scope: ['punctuation'],
+			settings: {
+				foreground: 'color-mix(in srgb, var(--primary) 85%, white 15%)'
+			}
+		},
+		{
+			scope: ['link'],
+			settings: {
+				foreground: 'color-mix(in srgb, var(--primary) 80%, white 20%)'
+			}
+		}
+	]
+};

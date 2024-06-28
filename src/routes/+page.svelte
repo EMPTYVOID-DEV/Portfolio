@@ -10,25 +10,25 @@
 	let cards: { name: string; src: string; contrast?: number }[] = [
 		{
 			name: 'about',
-			src: '/images/about.png'
+			src: '/images/about.webp'
 		},
 		{
 			name: 'skills',
-			src: '/images/skill2.png',
+			src: '/images/skill.webp',
 			contrast: 20
 		},
 		{
 			name: 'projects',
-			src: '/images/project.png',
+			src: '/images/project.webp',
 			contrast: 20
 		},
 		{
 			name: 'writings',
-			src: '/images/blog.png'
+			src: '/images/writing.webp'
 		},
 		{
 			name: 'contact',
-			src: '/images/contact.png'
+			src: '/images/contact.webp'
 		}
 	];
 	let visible = false;

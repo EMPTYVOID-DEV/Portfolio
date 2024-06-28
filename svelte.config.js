@@ -22,10 +22,12 @@ const config = {
 				'/projects/create split app',
 				'/projects/zero-ui',
 				'/projects/the_tale',
+				'/projects/visual-tweak',
 				'/projects/tmhub-api',
 				'/writings/markdown and obsidian',
 				'/writings/svelte the magic framework',
-				'/writings/component driven development'
+				'/writings/component driven development',
+				'/writings/functional programming'
 			]
 		}
 	}

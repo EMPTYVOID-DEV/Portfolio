@@ -1,0 +1,101 @@
+![](/images/fp.avif)
+
+**Functional programming** is a paradigm that, once mastered, can elevate you from a junior to a senior-level engineer. It enables you to write significantly faster, more maintainable code. Beyond efficiency, functional programming brings a unique joy to coding.
+
+## Concepts
+
+We'll explore functional programming concepts using fp-ts, a library that simplifies applying these principles in TypeScript, making them more accessible and practical for developers
+
+### Pure functions
+
+In functional programming we want most our functions to be pure functions which have these properties.
+
+- **Deterministic**: Same input always produces the same output.
+
+- **Total**: Every possible input maps to an output.
+
+- **No Side Effects**: Can't read or modify external data.
+
+With these properties, pure functions are predictable, less prone to errors, easier to test, and can be optimized through memoization.
+
+### Immutablility
+
+We prefer immutable variables, creating new ones instead of modifying existing data. This may seem unnecessary, but mutating data can cause significant issues, especially in JavaScript due to its special scoping.
+
+### Functions composition
+
+We aim to create compact, reusable functions and combine their logic sequentially, gradually transforming data shape. The fp-ts library offers two useful functions: flow, which accepts multiple functions and returns a composed function, and pipe, which executes passed functions with a given argument and yields the final result.
+
+```typescript
+import { flow } from 'fp-ts/function';
+
+function base64ToBuffer(base64: string) {
+	return Buffer.from(base64, 'base64');
+}
+
+function bufferToBlob(buffer: Buffer) {
+	return new Blob([buffer]);
+}
+
+const base64ToBlob = flow(base64ToBuffer, bufferToBlob);
+```
+
+Using flow, we combine base64ToBuffer and bufferToBlob to create the base64ToBlob function. fp-ts also handles errors when incompatible functions are passed. This approach ensures type safety and composition, key principles in functional programming.
+
+### Currying
+
+Currying takes a non-unary function and returns a sequence of unary functions. This technique enables partial application, function composition, and enhanced code reusability.
+
+### Either and Option
+
+Either and Option are monads (a complex topic deserving its own blog post) that aid in preventing numerous bugs.
+
+#### Either
+
+Either is a structure encapsulating a value A with a potential error E. It provides robust error handling and type safety.
+
+```typescript
+import { ZodError, ZodSchema } from 'zod';
+import { Either, left, right } from 'fp-ts/Either';
+
+export function validator<A>(
+	data: Record<string, unknown>,
+	schema: ZodSchema
+): Either<ZodError, A> {
+	const result = schema.safeParse(data);
+	return result.success ? right(result.data) : left(result.error);
+}
+```
+
+This general Zod validator returns an Either of ZodError and generic A. We construct Either with right for A and left for errors.
+
+We can check the **\_tag** property to determine which case it is:
+
+```typescript
+const either = validator({ age: 30 }, schema);
+if (either._tag === 'right') console.log(either.right);
+```
+
+#### Option
+
+Option represents a value that may or may not exist. It's useful for handling nullable values safely.
+
+```typescript
+import { Option, some, none } from 'fp-ts/Option';
+
+function divide(a: number, b: number): Option<number> {
+	return b === 0 ? none : some(a / b);
+}
+
+const result = divide(10, 2);
+if (result._tag === 'some') {
+	console.log(result.value); // 5
+}
+
+const impossible = divide(10, 0);
+if (impossible._tag === 'none') {
+	console.log("Can't divide by zero");
+}
+```
+
+There are numerous additional concepts in functional programming, including recursion, memoization, functors, and generators. Exploring all of these in depth would transform this post into a comprehensive book.
