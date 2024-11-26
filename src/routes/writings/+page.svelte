@@ -1,10 +1,10 @@
 <script lang="ts">
 	import Description from '$lib/components/core/description.svelte';
+	import Unit from '$lib/components/core/unit.svelte';
 	import Units from '$lib/components/core/units.svelte';
-	import { colorsMap, writings, type units } from '$lib/utils/consts';
+	import { colorsMap, writings } from '$lib/utils/consts';
 	import { onMount } from 'svelte';
-	let description = `
-Embark on a journey through the dynamic landscape of web development, cyber security, and machine learning with a focus on React and Svelte.`;
+	let description = `Embark on a journey through the dynamic landscape of web development , cloud and cyber security.`;
 
 	onMount(() => {
 		document.documentElement.style.setProperty('--primary', colorsMap.get('writings'));
@@ -13,7 +13,17 @@ Embark on a journey through the dynamic landscape of web development, cyber secu
 
 <div class="writings">
 	<Description header="My writings" {description} />
-	<Units units={writings} />
+	<Units>
+		{#each writings as writing}
+			<Unit
+				date={writing.date}
+				title={writing.title}
+				description={writing.description}
+				tags={writing.tags}
+				href={`/writings/${writing.id}`}
+			/>
+		{/each}
+	</Units>
 </div>
 
 <style>

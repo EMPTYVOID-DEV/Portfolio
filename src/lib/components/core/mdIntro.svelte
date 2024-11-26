@@ -1,8 +1,6 @@
 <script lang="ts">
-	import type { months } from '$lib/utils/consts';
-
 	export let title: string;
-	export let date: { day: number; month: months; year: number };
+	export let date: Date;
 	export let readingTime: number = 0;
 	export let isProjects = false;
 </script>
@@ -10,7 +8,7 @@
 <div class="intro">
 	<h1 class:project={isProjects}>{title}</h1>
 	<div class="timing">
-		<span>Created at {date.day}-{date.month}-{date.year}</span>
+		<span>{date.toISOString().split('T')[0]}</span>
 		{#if !isProjects}
 			<span>Reading time is about {readingTime} min</span>
 		{/if}

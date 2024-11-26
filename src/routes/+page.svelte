@@ -13,11 +13,6 @@
 			src: '/images/about.webp'
 		},
 		{
-			name: 'skills',
-			src: '/images/skill.webp',
-			contrast: 20
-		},
-		{
 			name: 'projects',
 			src: '/images/project.webp',
 			contrast: 20

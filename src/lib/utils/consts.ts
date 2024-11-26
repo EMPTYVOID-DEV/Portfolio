@@ -1,140 +1,97 @@
 import type { ThemeInput } from 'shiki';
 
-export type units = {
+type Routes = 'home' | 'about' | 'projects' | 'writings' | 'contact';
+
+export type Unit = {
+	id: number;
 	title: string;
-	date: { month: months; day: number; year: number };
-	description: string;
-	href: string;
-	tags: string[];
+	date: Date;
+	duration?: string;
+	href?: string;
 	readingTime?: number;
-}[];
+	description: string;
+	tags: string[];
+};
 
-type routes = 'home' | 'about' | 'skills' | 'projects' | 'writings' | 'contact';
-
-export const colorsMap = new Map<routes, string>([
+export const colorsMap = new Map<Routes, string>([
 	['home', '#111111'],
 	['about', '#cc3300'],
-	['skills', '#37c215'],
 	['projects', '#337ab7'],
 	['writings', '#ef7190'],
 	['contact', '#05d69e']
 ]);
 
-export const monthsList = [
-	'Jan',
-	'Feb',
-	'Mar',
-	'Apr',
-	'May',
-	'Jun',
-	'Jul',
-	'Aug',
-	'Sep',
-	'Oct',
-	'Nov',
-	'Dec'
-] as const;
-
-export type months = (typeof monthsList)[number];
-
-export const skills = new Map([
-	['Frontend', ['react', 'svelte(kit)', 'nextjs', 'tailwind', 'postcss', 'figma', 'vite']],
-	['Backend', ['nodejs', 'mongodb', 'postgresql', 'expressJs', 'lucia', 'drizzle', 'prisma']],
-	[
-		'General',
-		['typescript', 'zod', 'docker', 'python', 'git', 'puppeteer', 'linux', 'jest', 'pnpm']
-	]
-]);
-
-export const projects: units = [
+export const projects: Unit[] = [
 	{
-		date: { day: 19, month: 'Jun', year: 2024 },
-		href: '/projects/visual-tweak',
-		tags: ['nextjs', 'react', 'sharp.js', 'tailwind', 'image processing'],
-		title: 'Visual-tweak',
-		description: 'Visual-tweak is a web app that provides image processing tools for developers.'
+		id: 3,
+		title: 'GStore',
+		description: 'A self-hosted storage solution',
+		date: new Date('2024-09-01'),
+		duration: '3 months',
+		tags: ['honojs', 'sveltekit', 'bunjs', 'typescript', 'postgres', 'drizzle', 'tauri']
 	},
+
 	{
-		title: 'Tmhub-api',
-		date: { day: 10, month: 'May', year: 2024 },
-		description: 'An api for a crm.',
-		href: '/projects/tmhub-api',
-		tags: ['node', 'express', 'typescript', 'Maria db']
-	},
-	{
+		id: 2,
 		title: 'The_tale',
-		date: { day: 3, month: 'Apr', year: 2024 },
+		date: new Date('2024-03-24'),
+		duration: '3 months',
 		description:
-			'The tale is a plataform that enables people to collaborate in order to create writings and control everything from the structure, colors, fonts, references, and more. ',
-		href: '/projects/the_tale',
+			'A platform enabling people to collaborate on writings, controlling structure, colors, fonts, references, and more.',
 		tags: ['sveltekit', 'lucia', 'postgresql', 'drizzle', 'zero-ui']
 	},
 	{
+		id: 4,
 		title: 'Zero-UI',
-		date: { day: 9, month: 'Mar', year: 2024 },
-		description: 'This is an easy to use svelte ui library',
-		href: '/projects/zero-ui',
-		tags: ['svelte', 'UI libraries', 'jsdoc', 'Cli']
+		date: new Date('2024-02-07'),
+		duration: '3 months',
+		description: 'An easy-to-use Svelte UI library.',
+		tags: ['svelte', 'UI libraries', 'jsdoc', 'CLI']
 	},
 	{
+		id: 1,
 		title: 'Altron',
-		date: { day: 19, month: 'Nov', year: 2023 },
+		date: new Date('2023-11-05'),
+		duration: '1 year',
 		description:
-			'Altron is a robust and versatile rich text editor designed for Svelte applications. It empowers users to effortlessly create, edit, and manage structured text content by seamlessly incorporating various blocks with associated dat',
-		href: '/projects/altron',
-		tags: ['svelte', 'rich text editor', 'npm']
-	},
-	{
-		title: 'Svelte Docs Maker',
-		date: { day: 20, month: 'Oct', year: 2023 },
-		description:
-			'Sveltedocsmaker is a package that simplifies the process of building your documentation route using Svelte components',
-		href: '/projects/svelte docs maker',
-		tags: ['svelte', 'documentation', 'npm']
-	},
-	{
-		title: 'Create Split App',
-		date: { day: 6, month: 'Sep', year: 2023 },
-		description:
-			'The Split Stack CLI Tool is a command-line utility designed to streamline the process of initializing a project that combines bleeding edge technologies around sveltekit',
-		href: '/projects/create split app',
-		tags: ['sveltekit', 'project setup', 'cli tools', 'npm']
+			'A robust and versatile rich text editor for Svelte applications. It enables users to effortlessly manage structured text content.',
+		tags: ['svelte', 'rich text editor', 'npm package']
 	}
 ];
 
-export const writings: units = [
+export const writings: Unit[] = [
 	{
+		id: 1,
 		title: 'Functional programming',
-		date: { day: 28, month: 'Jun', year: 2024 },
+		date: new Date('2024-06-28'),
 		description:
-			'Learn functional programming with TypeScript and fp-ts to write efficient, maintainable code. Implement key concepts like immutability, pure functions, and monads using these tools.',
-		href: '/writings/functional programming',
+			'Learn functional programming with TypeScript and fp-ts to write efficient, maintainable code. Implement key concepts like immutability, pure functions, and monads.',
 		readingTime: 20,
 		tags: ['functional programming', 'typescript', 'fp-ts']
 	},
 	{
-		title: 'markdown and obsidian',
-		date: { day: 21, month: 'Oct', year: 2023 },
-		description: 'We gonna talk about how you can use markdown to make your life much easier.',
-		href: '/writings/markdown and obsidian',
+		id: 2,
+		title: 'Markdown and Obsidian',
+		date: new Date('2023-10-21'),
+		description: 'How markdown can make your life much easier.',
 		readingTime: 8,
 		tags: ['markdown', 'obsidian']
 	},
 	{
-		title: 'svelte the magic framework',
-		date: { day: 2, month: 'Jan', year: 2023 },
-		description: 'Let check way svelte is magic.',
-		href: '/writings/svelte the magic framework',
+		id: 3,
+		title: 'Svelte: The magic framework',
+		date: new Date('2023-01-02'),
+		description: 'Exploring why Svelte is magic.',
 		readingTime: 8,
 		tags: ['svelte', 'frontend frameworks']
 	},
 	{
-		title: 'Component driven development',
-		href: '/writings/component driven development',
-		description: 'Let talk about component driven development best practices',
+		id: 4,
+		title: 'Component-driven development',
+		description: 'Best practices for component-driven development.',
 		readingTime: 12,
 		tags: ['CDD', 'frontend', 'svelte'],
-		date: { day: 10, month: 'Jan', year: 2024 }
+		date: new Date('2024-01-10')
 	}
 ];
 
@@ -145,57 +102,39 @@ export const altronTheme: ThemeInput = {
 	settings: [
 		{
 			scope: ['comment'],
-			settings: {
-				foreground: 'color-mix(in srgb, var(--primary) 90%, black)'
-			}
+			settings: { foreground: 'color-mix(in srgb, var(--primary) 90%, black)' }
 		},
 		{
 			scope: ['string'],
-			settings: {
-				foreground: 'color-mix(in srgb, var(--primary) 80%, black)'
-			}
+			settings: { foreground: 'color-mix(in srgb, var(--primary) 80%, black)' }
 		},
 		{
 			scope: ['keyword'],
-			settings: {
-				foreground: 'color-mix(in srgb, var(--primary) 95%, black)'
-			}
+			settings: { foreground: 'color-mix(in srgb, var(--primary) 95%, black)' }
 		},
 		{
 			scope: ['constant'],
-			settings: {
-				foreground: 'color-mix(in srgb, var(--primary) 80%, black)'
-			}
+			settings: { foreground: 'color-mix(in srgb, var(--primary) 80%, black)' }
 		},
 		{
 			scope: ['parameter'],
-			settings: {
-				foreground: 'color-mix(in srgb, var(--primary) 100%, black)'
-			}
+			settings: { foreground: 'color-mix(in srgb, var(--primary) 100%, black)' }
 		},
 		{
 			scope: ['function'],
-			settings: {
-				foreground: 'color-mix(in srgb, var(--primary) 95%, white 5%)'
-			}
+			settings: { foreground: 'color-mix(in srgb, var(--primary) 95%, white 5%)' }
 		},
 		{
 			scope: ['string-expression'],
-			settings: {
-				foreground: 'color-mix(in srgb, var(--primary) 90%, white 10%)'
-			}
+			settings: { foreground: 'color-mix(in srgb, var(--primary) 90%, white 10%)' }
 		},
 		{
 			scope: ['punctuation'],
-			settings: {
-				foreground: 'color-mix(in srgb, var(--primary) 85%, white 15%)'
-			}
+			settings: { foreground: 'color-mix(in srgb, var(--primary) 85%, white 15%)' }
 		},
 		{
 			scope: ['link'],
-			settings: {
-				foreground: 'color-mix(in srgb, var(--primary) 80%, white 20%)'
-			}
+			settings: { foreground: 'color-mix(in srgb, var(--primary) 80%, white 20%)' }
 		}
 	]
 };
