@@ -3,18 +3,24 @@
 	import Unit from '$lib/components/core/unit.svelte';
 	import Units from '$lib/components/core/units.svelte';
 	import { colorsMap, writings } from '$lib/utils/consts';
-	import { onMount } from 'svelte';
+
 	let description = `Embark on a journey through the dynamic landscape of web development , cloud and cyber security.`;
 
-	onMount(() => {
+	$effect(() => {
 		document.documentElement.style.setProperty('--primary', colorsMap.get('writings'));
+	});
+
+	const sortedWritings = writings.sort((a, b) => {
+		const dateA = new Date(a.date);
+		const dateB = new Date(b.date);
+		return dateB.getTime() - dateA.getTime();
 	});
 </script>
 
 <div class="writings">
 	<Description header="My writings" {description} />
 	<Units>
-		{#each writings as writing}
+		{#each sortedWritings as writing}
 			<Unit
 				date={writing.date}
 				title={writing.title}

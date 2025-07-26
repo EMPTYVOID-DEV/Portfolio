@@ -1,7 +1,13 @@
 <script lang="ts">
-	export let header: string;
-	export let description: string = '';
-	export let size = 1;
+	let {
+		header,
+		description = '',
+		size = 1
+	}: {
+		header: string;
+		description?: string;
+		size?: number;
+	} = $props();
 </script>
 
 <div class="description">

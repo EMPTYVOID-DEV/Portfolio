@@ -1,11 +1,21 @@
 <script lang="ts">
 	import Tags from './tags.svelte';
-	export let href: string;
-	export let date: Date;
-	export let duration: string = null;
-	export let title: string;
-	export let description: string;
-	export let tags: string[];
+
+	let {
+		href,
+		date,
+		duration = null,
+		title,
+		description,
+		tags
+	}: {
+		href: string;
+		date: Date;
+		duration?: string | null;
+		title: string;
+		description: string;
+		tags: string[];
+	} = $props();
 </script>
 
 <a class="unit" {href}>

@@ -1,7 +1,13 @@
 <script lang="ts">
-	export let name: string;
-	export let src: string;
-	export let contrast: number = 1;
+	let {
+		name,
+		src,
+		contrast = 1
+	}: {
+		name: string;
+		src: string;
+		contrast?: number;
+	} = $props();
 </script>
 
 <div class="card">

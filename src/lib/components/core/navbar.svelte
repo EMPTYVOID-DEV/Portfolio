@@ -14,7 +14,7 @@
 		<!-- svelte-ignore a11y-no-static-element-interactions -->
 		<span
 			class="back"
-			on:click={() => {
+			onclick={() => {
 				let paths = $page.url.pathname.split('/');
 				paths = paths.filter((el) => el != '');
 				paths.pop();

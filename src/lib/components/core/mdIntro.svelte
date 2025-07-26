@@ -1,8 +1,10 @@
 <script lang="ts">
-	export let title: string;
-	export let date: Date;
-	export let readingTime: number = 0;
-	export let isProjects = false;
+	let { title, date, readingTime = 0, isProjects = false }: {
+		title: string;
+		date: Date;
+		readingTime?: number;
+		isProjects?: boolean;
+	} = $props();
 </script>
 
 <div class="intro">

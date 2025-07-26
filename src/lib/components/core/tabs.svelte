@@ -1,11 +1,13 @@
-<script>
-	import { createEventDispatcher } from 'svelte';
-
-	/**@type {{icon?:import("../../utils/types").iconComponent,title:string}[]}*/
-	export let tabs = [];
-	/**@type {number}*/
-	export let activeTab = 0;
-	const dispatcher = createEventDispatcher();
+<script lang="ts">
+	let {
+		tabs = [],
+		activeTab = $bindable(0),
+		onchange
+	}: {
+		tabs?: { icon?: import('../../utils/types').iconComponent; title: string }[];
+		activeTab?: number;
+		onchange?: (event: { activeTab: number }) => void;
+	} = $props();
 </script>
 
 <div class="tabs">
@@ -13,14 +15,14 @@
 		<button
 			class="tab"
 			class:active={index == activeTab}
-			on:click={() => {
+			onclick={() => {
 				activeTab = index;
-				dispatcher('change', {
+				onchange?.({
 					activeTab
 				});
 			}}
 		>
-			<svelte:component this={tab.icon} />
+			<tab.icon />
 			<span>{tab.title}</span>
 		</button>
 	{/each}

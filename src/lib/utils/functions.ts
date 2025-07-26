@@ -6,24 +6,29 @@ export async function copyToKeyboard(text: string, timeout: number, cb: (state: 
 }
 
 export function getColorLevels(color: string): [string, string, string] {
-	const hexToRgb = (hex: string) => {
-		// Remove the hash character (#) if it exists
-		hex = hex.replace(/^#/, '');
+	const hexToRgb = (hex: string): [number, number, number] => {
+		const cleanHex = hex.replace(/^#/, '');
+		const hexValue = parseInt(cleanHex, 16);
 
-		// Parse the hexadecimal value to RGB
-		const bigint = parseInt(hex, 16);
-		const r = (bigint >> 16) & 255;
-		const g = (bigint >> 8) & 255;
-		const b = bigint & 255;
+		const RED_SHIFT = 16;
+		const GREEN_SHIFT = 8;
+		const BYTE_MASK = 0xff; // 255 in hex
 
-		return [r, g, b];
+		const red = (hexValue >> RED_SHIFT) & BYTE_MASK;
+		const green = (hexValue >> GREEN_SHIFT) & BYTE_MASK;
+		const blue = hexValue & BYTE_MASK;
+
+		return [red, green, blue];
 	};
 
-	const rgbColor = hexToRgb(color);
+	const [red, green, blue] = hexToRgb(color);
 
-	const level800 = `rgb(${rgbColor[0]}, ${rgbColor[1]}, ${rgbColor[2]})`;
-	const level400 = `rgba(${rgbColor[0]}, ${rgbColor[1]}, ${rgbColor[2]}, 0.53)`;
-	const level100 = `rgba(${rgbColor[0]}, ${rgbColor[1]}, ${rgbColor[2]}, 0.14)`;
+	const OPACITY_MEDIUM = 0.53;
+	const OPACITY_LIGHT = 0.14;
+
+	const level800 = `rgb(${red}, ${green}, ${blue})`;
+	const level400 = `rgba(${red}, ${green}, ${blue}, ${OPACITY_MEDIUM})`;
+	const level100 = `rgba(${red}, ${green}, ${blue}, ${OPACITY_LIGHT})`;
 
 	return [level800, level400, level100];
 }

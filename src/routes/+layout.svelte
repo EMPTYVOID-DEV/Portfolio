@@ -5,7 +5,7 @@
 
 <div class="main">
 	<Navbar />
-	<slot><!-- optional fallback --></slot>
+	<slot />
 </div>
 
 <style>

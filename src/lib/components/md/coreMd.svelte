@@ -8,7 +8,8 @@
 	import CodeSpanMdHandler from './codeSpanMdHandler.svelte';
 	import HeaderMdHandler from './headerMdHandler.svelte';
 	import TableMdHandler from './tableMd.svelte';
-	export let source: string;
+
+	let { source }: { source: string } = $props();
 </script>
 
 <SvelteMarkdown

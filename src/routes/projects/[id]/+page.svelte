@@ -3,9 +3,10 @@
 	import CoreMd from '$lib/components/md/coreMd.svelte';
 	import { colorsMap } from '$lib/utils/consts.js';
 	import { getColorLevels } from '$lib/utils/functions.js';
-	import { onMount } from 'svelte';
-	export let data;
-	onMount(() => {
+
+	let { data } = $props();
+
+	$effect(() => {
 		const colors = getColorLevels(colorsMap.get('projects'));
 		document.documentElement.style.setProperty('--primary', colors[0]);
 		document.documentElement.style.setProperty('--primary800', colors[0]);

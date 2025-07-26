@@ -2,22 +2,17 @@
 	import Description from '$lib/components/core/description.svelte';
 	import Unit from '$lib/components/core/unit.svelte';
 	import Units from '$lib/components/core/units.svelte';
-	import { colorsMap, type Unit as UnitType } from '$lib/utils/consts';
-	import { onMount } from 'svelte';
-	let description = `I'm Keskas Aymen, a 22-year-old independent web developer based in Algeria. My passion lies in crafting exceptional user interfaces, utilizing the latest and most advanced tools available, this year i am pursing a master's degree in cybersecurity.`;
-	let awards: UnitType[] = [
-		{
-			id: 1,
-			date: new Date('2023-06-05'),
-			title: "Bachelor's degree , Computer science",
-			description:
-				'I got Bachelors degreen in computer science at ferhat abbas university with score equal to 16.18.',
-			href: 'https://fsciences.univ-setif.dz/',
-			tags: ['Bachelors', 'computer science']
-		}
-	];
+	import { awards, colorsMap } from '$lib/utils/consts';
 
-	onMount(() => {
+	let description = `I'm Keskas Aymen, a 22-year-old independent web developer based in Algeria. My passion lies in crafting exceptional user interfaces, utilizing the latest and most advanced tools available, this year i am pursing a master's degree in cybersecurity.`;
+
+	const sortedAwards = awards.sort((a, b) => {
+		const dateA = new Date(a.date);
+		const dateB = new Date(b.date);
+		return dateB.getTime() - dateA.getTime(); // Sort in descending order
+	});
+
+	$effect(() => {
 		document.documentElement.style.setProperty('--primary', colorsMap.get('about'));
 	});
 </script>
@@ -27,7 +22,7 @@
 	<div class="awards">
 		<h3>Awards</h3>
 		<Units>
-			{#each awards as award}
+			{#each sortedAwards as award}
 				<Unit
 					date={award.date}
 					title={award.title}

@@ -1,7 +1,17 @@
 <script lang="ts">
+	import type { Snippet } from 'svelte';
 	import { quadIn } from 'svelte/easing';
-	export let speed = 2;
-	export let durationPerWord = 125;
+
+	let {
+		speed = 2,
+		children,
+		durationPerWord = 125
+	}: {
+		children:Snippet,
+		speed?: number;
+		durationPerWord?: number;
+	} = $props();
+
 	function write(node: HTMLSpanElement) {
 		const child = node.childNodes.item(0);
 		const text = child.textContent;
@@ -18,5 +28,5 @@
 </script>
 
 <div transition:write>
-	<slot />
+	{@render children()}
 </div>

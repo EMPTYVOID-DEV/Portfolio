@@ -4,7 +4,7 @@
 	import { quartInOut } from 'svelte/easing';
 	import { fly } from 'svelte/transition';
 	import { colorsMap } from '$lib/utils/consts';
-	import { onMount } from 'svelte';
+
 	let quote =
 		'A famous explorer once said that the extraordinary is in what we do, not who we are.';
 	let cards: { name: string; src: string; contrast?: number }[] = [
@@ -26,9 +26,9 @@
 			src: '/images/contact.webp'
 		}
 	];
-	let visible = false;
+	let visible = $state(false);
 
-	onMount(() => {
+	$effect(() => {
 		visible = true;
 		document.documentElement.style.setProperty('--primary', colorsMap.get('home'));
 	});
