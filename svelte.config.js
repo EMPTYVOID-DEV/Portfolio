@@ -17,6 +17,8 @@ const config = {
 				'/projects/2',
 				'/projects/3',
 				'/projects/4',
+				'/projects/5',
+				'/projects/6',
 				'/writings/1',
 				'/writings/2',
 				'/writings/3',
