@@ -43,7 +43,7 @@ export const projects: Unit[] = [
 		id: 1,
 		title: 'Altron',
 		date: new Date('2023-11-05'),
-		duration: '1 year',
+		endDate: new Date('2024-11-05'),
 		description:
 			'A robust and versatile rich text editor for Svelte applications. It enables users to effortlessly manage structured text content.',
 		tags: ['svelte', 'rich text editor', 'npm package']
@@ -52,7 +52,7 @@ export const projects: Unit[] = [
 		id: 2,
 		title: 'The_tale',
 		date: new Date('2024-03-24'),
-		duration: '3 months',
+		endDate: new Date('2024-06-24'),
 		description:
 			'A platform enabling people to collaborate on writings, controlling structure, colors, fonts, references, and more.',
 		tags: ['sveltekit', 'lucia', 'postgresql', 'drizzle', 'zero-ui']
@@ -62,7 +62,7 @@ export const projects: Unit[] = [
 		title: 'GStore',
 		description: 'A self-hosted storage solution',
 		date: new Date('2024-09-01'),
-		duration: '3 months',
+		endDate: new Date('2024-12-01'),
 		tags: ['honojs', 'sveltekit', 'bunjs', 'typescript', 'postgres', 'drizzle', 'tauri']
 	},
 
@@ -70,7 +70,7 @@ export const projects: Unit[] = [
 		id: 4,
 		title: 'Zero-UI',
 		date: new Date('2024-02-07'),
-		duration: '3 months',
+		endDate: new Date('2024-05-07'),
 		description: 'An easy-to-use Svelte UI library.',
 		tags: ['svelte', 'UI libraries', 'jsdoc', 'CLI']
 	},
@@ -78,19 +78,35 @@ export const projects: Unit[] = [
 		id: 5,
 		title: 'FoundItems',
 		date: new Date('2025-01-18'),
-		duration: '4 months',
+		endDate: new Date('2025-05-18'),
 		description:
 			'An intelligent lost & found matching platform that connects people using AI-powered algorithms. Features multi-language support, automated matching, and secure authentication.',
 		tags: ['sveltekit', 'hono', 'ai matching', 'huggingface', 'docker', 'azure']
 	},
 	{
 		id: 6,
-		title: 'EnvTracker - ALGORO Internship',
-		date: new Date('2025-02-01'),
-		duration: '6 months',
+		title: 'EnvTracker - ALGORO',
+		date: new Date('2024-12-01'),
+		endDate: new Date(),
 		description:
-			'Modernized a monolithic SaaS platform into a scalable multi-tenant architecture with control/application plane separation, schema-based tenant isolation, and enterprise SSO integration.',
-		tags: ['sveltekit', 'spring boot', 'multi-tenancy', 'postgresql', 'ansible', 'oauth2']
+			'Led the end-to-end transformation of a monolithic deployment management platform into a scalable multi-tenant SaaS system, introducing a control/application plane architecture, schema-based tenant isolation, real-time deployment tracking, and enterprise-grade access control and authentication.',
+		tags: [
+			'sveltekit',
+			'spring boot',
+			'typescript',
+			'postgresql',
+			'rabbitmq',
+			'docker',
+			'ansible',
+			'kubernetes',
+			'multi-tenancy',
+			'distributed systems',
+			'real-time systems',
+			'real-time systems',
+			'Oauth2 and OIDC',
+			'infrastructure as code',
+			'Google Cloud'
+		]
 	}
 ];
 

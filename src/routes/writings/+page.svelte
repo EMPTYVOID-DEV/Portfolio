@@ -23,6 +23,9 @@
 		{#each sortedWritings as writing}
 			<Unit
 				date={writing.date}
+				endDate={null}
+				showEnd={false}
+				showStartLabel={false}
 				title={writing.title}
 				description={writing.description}
 				tags={writing.tags}

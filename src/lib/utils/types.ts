@@ -6,7 +6,7 @@ export type Unit = {
 	id: number;
 	title: string;
 	date: Date;
-	duration?: string;
+	endDate?: Date;
 	href?: string;
 	readingTime?: number;
 	description: string;

@@ -10,10 +10,15 @@
 		document.documentElement.style.setProperty('--primary', colorsMap.get('projects'));
 	});
 
-	const sortedProjects = projects.sort((a, b) => {
-		const dateA = new Date(a.date);
-		const dateB = new Date(b.date);
-		return dateB.getTime() - dateA.getTime();
+	const sortedProjects = [...projects].sort((a, b) => {
+		// 1) Sort by finish date (desc). If a project has no endDate, treat it as finishing on its start date.
+		const endA = (a.endDate ?? a.date).getTime();
+		const endB = (b.endDate ?? b.date).getTime();
+		const endDiff = endB - endA;
+		if (endDiff !== 0) return endDiff;
+
+		// 2) Tie-breaker: start date (desc)
+		return b.date.getTime() - a.date.getTime();
 	});
 </script>
 
@@ -23,6 +28,7 @@
 		{#each sortedProjects as project}
 			<Unit
 				date={project.date}
+				endDate={project.endDate}
 				title={project.title}
 				description={project.description}
 				tags={project.tags}

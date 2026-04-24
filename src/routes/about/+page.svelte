@@ -4,7 +4,7 @@
 	import Units from '$lib/components/core/units.svelte';
 	import { awards, colorsMap } from '$lib/utils/consts';
 
-	let description = `I'm Keskas Aymen, a 22-year-old independent web developer based in Algeria. My passion lies in crafting exceptional user interfaces, utilizing the latest and most advanced tools available, this year i am pursing a master's degree in cybersecurity.`;
+	let description = `I'm Keskas Aymen, a 24-year-old full-stack engineer based in France. I specialize in building production-grade SaaS platforms — multi-tenant architectures, real-time systems, CI/CD pipelines, and developer tooling. Currently pursuing a Master's in Cloud Computing in Avignon.`;
 
 	const sortedAwards = awards.sort((a, b) => {
 		const dateA = new Date(a.date);
