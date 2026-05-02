@@ -103,6 +103,10 @@ th {
 	line-height: var(--lhbody);
 	font-weight: 400;
 	word-break: break-word;
+	white-space: normal;
+}
+
+code {
 	white-space: pre-wrap;
 }
 
